@@ -17,18 +17,16 @@ $(document).ready(function() {
 
     $(".year").text(year);
 
-    year.forEach(function(num) {
-      if (num === 1 || num === 2 || num === 3 || num === 4 || num === 5 || num === 6 || num === 7 || num === 8 || num === 9 || num === 0) {
-        if (!result) {             // same as writing if (result === false)
-          $(".not").text("not");
-          alert(typeof(year));
-        } else if (result){
-          $(".not").text("");
-          alert(typeof(year));
-        });
-        $("#result").show();
-      } else {
-        alert("Invalid Input!");
-    )};
+    if (isNaN(year) === false) {
+      if (!result) {             // same as writing if (result === false)
+        $(".not").text("not");
+      } else if (result) {
+        $(".not").text("");
+      }
+      $("#result").show();
+    } else {
+      alert("Not a number!");
+      $("#result").hide();
+    };
   });
 });
